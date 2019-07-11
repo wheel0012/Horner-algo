@@ -1,5 +1,5 @@
 #include <iostream>
-#include <string>
+#include <string.h>
 class Tools
 {
     public:
@@ -7,13 +7,14 @@ class Tools
     {
 
     }
-    template<typename T>
-    T Split(T str)
+    void Split(char* str)
     {
-        for(int i = 0; i< (sizeof(str)/sizeof(char)); i++)
+        std::cout<<strlen(str)<<std::endl;
+        for(int i = 0; i< strlen(str); i++)
         {
-            std::cout<<"yo"<<i<<std::endl;
+            std::cout<<str[i]<<std::endl;
         }
+        std::cout<<"\n"<<std::endl;
         //str[0]
     }
 };
@@ -21,9 +22,9 @@ int main()
 {
     Tools tools; 
     char *str = (char *)malloc(sizeof(char) * 200);
-    std::cin >> str;
+    std::cin.getline(str, sizeof(*str));
     fflush(stdin);
-    std::cout << "hello, world!" << std::endl;
+    //std::cout << "hello, world!" << std::endl;
     tools.Split(str);
     getchar();
     return 0;
