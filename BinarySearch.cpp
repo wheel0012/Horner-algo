@@ -10,7 +10,6 @@ class Search
         if(arr[middle] > value) return BinarySearch(arr, value, left, middle);
         else if(arr[middle]<value)return BinarySearch(arr, value, middle, right);
         else if(arr[middle] == value)return middle;
-         
         return -1;
     }/*
     private:
@@ -27,9 +26,6 @@ class Search
 int main()
 {
     Search bs; 
-    //char *str = (char *)malloc(sizeof(char) * 200);
-    //std::cin >> str;
-    //fflush(stdin);
     int arr[10] = {1, 4, 5, 7, 8, 9, 10, 10, 11, 12};
     int result = bs.BinarySearch(arr, 11, 0, 9);
     std::cout << result << std::endl;
