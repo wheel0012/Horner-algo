@@ -23,6 +23,10 @@ class Matrix
                 this->matrix[i][j] = (int)(rand() %10);
                 std::cout<<"."<<std::endl;
     }
+    Matrix()
+    {
+        std::cout<<"I'm Mat 2"<<std::endl;
+    }
     Matrix  operator+(const Matrix& b)
     {
         Matrix *temp = new Matrix(this->cLength, this->rLength);
@@ -49,12 +53,13 @@ int main()
 {
     srand((unsigned int)time(0));
     std::cout<<"Matrix 1"<<std::endl;
-    //Matrix *matrix1= new Matrix(2, 3);
-    //matrix1->PrintMatrix();
+    Matrix* matrix1= new Matrix(2, 3);
+    matrix1->PrintMatrix();
+    //delete matrix1;
     //free(matrix1);
     std::cout<<"Matrix 2"<<std::endl;
-    Matrix *matrix2 = new Matrix(3,2);
-    matrix2->PrintMatrix();
+    Matrix *m2 = new Matrix(3, 2);
+    m2->PrintMatrix();
     std::cout<<"step3"<<std::endl;
     //Matrix result = *matrix1 + *matrix;
     std::cout<<"step4"<<std::endl;
