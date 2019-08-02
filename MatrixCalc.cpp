@@ -12,7 +12,7 @@ class Matrix
     Matrix(int column, int row)
     {
         std::cout<<"."<<std::endl;
-        this ->matrix = (int**)malloc(sizeof(int) * column  * sizeof(int) * row);
+        this->matrix = (int**)malloc(sizeof(int*) * column);
         std::cout<<"."<<std::endl;
         this->cLength = column;
         std::cout<<"."<<std::endl;
@@ -49,11 +49,12 @@ int main()
 {
     srand((unsigned int)time(0));
     std::cout<<"Matrix 1"<<std::endl;
-    //Matrix *matrix1= new Matrix(2, 3);
-    //matrix1->PrintMatrix();
+    Matrix *matrix1 = Matrix(2, 3);
+    matrix1->PrintMatrix();
     //free(matrix1);
     std::cout<<"Matrix 2"<<std::endl;
-    Matrix *matrix2 = new Matrix(3,2);
+    Matrix *matrix2 = new Matrix(2,3);
+    
     matrix2->PrintMatrix();
     std::cout<<"step3"<<std::endl;
     //Matrix result = *matrix1 + *matrix;
