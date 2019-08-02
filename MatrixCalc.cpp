@@ -27,14 +27,15 @@ class Matrix
     {
         std::cout<<"I'm Mat 2"<<std::endl;
     }
-    Matrix  operator+(const Matrix& b)
+    Matrix&  operator+(const Matrix& b)
     {
-        Matrix *temp = new Matrix(this->cLength, this->rLength);
         int cLength = abs(this->cLength - b.cLength);
         int rLength = abs(this->rLength - b.rLength);
-        for(int i = 0; i < cLength; i++)
+        Matrix *temp = new Matrix(this->cLength, this->rLength);
+        /* for(int i = 0; i < cLength; i++)
             for(int j = 0; j<rLength; j++)
                 temp->matrix[i][j] = this->matrix[i][j]+ b.matrix[i][j];
+        */
         return *temp;
     };
     void PrintMatrix()
@@ -61,8 +62,8 @@ int main()
     Matrix *m2 = new Matrix(3, 2);
     m2->PrintMatrix();
     std::cout<<"step3"<<std::endl;
-    //Matrix result = *matrix1 + *matrix;
+    Matrix result = *matrix1 + *m2;
     std::cout<<"step4"<<std::endl;
-    //matrix1->PrintMatrix();
+    matrix1->PrintMatrix();
     std::cout<<"\n\nDone!"<<std::endl;
 }
