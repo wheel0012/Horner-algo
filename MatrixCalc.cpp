@@ -29,6 +29,7 @@ class Matrix
     }
     Matrix&  operator+(const Matrix& b)
     {
+        Matrix *temp = new Matrix(this->cLength, this->rLength);
         int cLength = abs(this->cLength - b.cLength);
         int rLength = abs(this->rLength - b.rLength);
         Matrix *temp = new Matrix(this->cLength, this->rLength);
@@ -55,8 +56,7 @@ int main()
     srand((unsigned int)time(0));
     std::cout<<"Matrix 1"<<std::endl;
     Matrix* matrix1= new Matrix(2, 3);
-    matrix1->PrintMatrix();
-    //delete matrix1;
+    matrix1->PrintMatrix();  //delete matrix1;
     //free(matrix1);
     std::cout<<"Matrix 2"<<std::endl;
     Matrix *m2 = new Matrix(3, 2);
