@@ -72,13 +72,13 @@ int main()
 {
     srand((unsigned int)time(0));
     std::cout<<"Matrix 1"<<std::endl;
-    Matrix* matrix1= new Matrix(20, 30);
+    Matrix* matrix1= new Matrix(2, 3);
     matrix1->InitialRandom();
     matrix1->PrintMatrix(); 
     //delete matrix1;
     //free(matrix1);
     std::cout<<"Matrix 2"<<std::endl;
-    Matrix *m2 = new Matrix(30, 20);
+    Matrix *m2 = new Matrix(3, 2);
     m2->InitialRandom();
     m2->PrintMatrix();
     std::cout<<"Results"<<std::endl;
