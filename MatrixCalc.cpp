@@ -12,38 +12,61 @@ public:
     int **matrix;
     Matrix(int column, int row)
     {
-        srand((unsigned int)time(0));
-        std::cout << "." << std::endl;
-        matrix = (int **)malloc(sizeof(int*) * column);
-        for(int i = 0; i< row; i++)
-            matrix[i] = (int *)malloc(sizeof(int)*row);
-        std::cout << "." << std::endl;
+        this->matrix = (int**)malloc(sizeof(int*) * column);
+        for(int i = 0; i < column; i++)
+            this->matrix[i] = (int*)malloc(sizeof(int)*row);
         this->cLength = column;
-        std::cout << "." << std::endl;
         this->rLength = row;
-        std::cout << "." << std::endl;
-        for (int i = 0; i < column; i++)
-            for (int j = 0; j < row; j++)
-                matrix[i][j] = (int)(rand() % 10);
-        std::cout << "." << std::endl;
     }
     Matrix()
     {
-        std::cout << "I'm Mat 2" << std::endl;
     }
-    Matrix*  operator +(Matrix& b)
+    void InitialRandom()
     {
-        Matrix *temp;
-        
-        int cL = abs(this->cLength - b.cLength);
-        int rL = abs(this->rLength - b.rLength);
-        for(int i = 0; i < cL; i++)
-            for(int j = 0; j<rL; j++)
-                temp->matrix[i][j] = matrix[i][j]+ b.matrix[i][j];
-                
-        return  temp;
+        for(int i = 0; i<this->cLength; i++)
+            for(int j = 0; j<this->rLength; j++)
+                this->matrix[i][j] = (int)(rand() %10);
     }
-    void PrintMatrix();
+    Matrix&  operator+(const Matrix& b)
+    {
+        int cLength = this->cLength > b.cLength ? b.cLength : this->cLength;
+        int rLength = this->rLength > b.rLength ? b.rLength : this->rLength;
+        Matrix *temp = new Matrix(this->cLength, this->rLength);
+        for(int i = 0; i < this->cLength; i++)
+            for(int j = 0; j<this->rLength; j++)
+                temp->matrix[i][j] = this->matrix[i][j];
+        for(int i = 0; i < cLength; i++)
+            for(int j = 0; j<rLength; j++)
+                temp->matrix[i][j] = this->matrix[i][j]+ b.matrix[i][j];
+        return *temp;
+    };
+    Matrix& operator-(const Matrix& b)
+    {
+        int cLength = this->cLength > b.cLength ? b.cLength : this->cLength;
+        int rLength = this->rLength > b.rLength ? b.rLength : this->rLength;
+        Matrix *temp = new Matrix(this->cLength, this->rLength);
+        for(int i = 0; i < this->cLength; i++)
+            for(int j = 0; j<this->rLength; j++)
+                temp->matrix[i][j] = this->matrix[i][j];
+        for(int i = 0; i < cLength; i++)
+            for(int j = 0; j<rLength; j++)
+                temp->matrix[i][j] = this->matrix[i][j]- b.matrix[i][j];
+        return *temp;
+    }
+    Matrix& operator*(const Matrix& b)
+    {
+        
+    }
+    void PrintMatrix()
+    {
+        for(int i = 0; i< this->rLength; i++)
+        {
+            for(int j = 0; j<this->cLength; j++)
+                std::cout<<this->matrix[j][i]<<" "<<std::ends;
+            std::cout<<"\n"<<std::endl;
+        }  
+    }
+    private: 
 };
 void Matrix::PrintMatrix()
 {
@@ -56,16 +79,23 @@ void Matrix::PrintMatrix()
 }
 int main()
 {
-    std::cout << "Matrix 1" << std::endl;
-    Matrix *m1 = new Matrix(5, 5);
-    m1->PrintMatrix();
+    srand((unsigned int)time(0));
+    std::cout<<"Matrix 1"<<std::endl;
+    Matrix* matrix1= new Matrix(2, 3);
+    matrix1->InitialRandom();
+    matrix1->PrintMatrix(); 
+    //delete matrix1;
     //free(matrix1);
-    std::cout << "Matrix 2" << std::endl;
-    Matrix *m2 = new Matrix(2, 2);
+    std::cout<<"Matrix 2"<<std::endl;
+    Matrix *m2 = new Matrix(3, 2);
+    m2->InitialRandom();
     m2->PrintMatrix();
-    std::cout << "step3" << std::endl;
-    Matrix *result = *m1 + *m2;
-    std::cout << "step4" << std::endl;
-    result->PrintMatrix();
-    std::cout << "\n\nDone!" << std::endl;
+    std::cout<<"Results"<<std::endl;
+    std::cout<<"Plus"<<std::endl;
+    Matrix result = *matrix1 + *m2;
+    result.PrintMatrix();
+    std::cout<<"Minus"<<std::endl;
+    result = *matrix1 - *m2;
+    result.PrintMatrix();
+    std::cout<<"\n\nDone!"<<std::endl;
 }
