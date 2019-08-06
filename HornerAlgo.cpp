@@ -23,7 +23,6 @@ public:
 
     Cell* Calc()
     {
-        
         this->GetLength();
     }
     int GetLength()
