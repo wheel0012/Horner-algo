@@ -4,11 +4,12 @@
 #include <time.h>
 class Matrix
 {
-    private:
-    int cLength= 0;
-    int rLength = 0;
-    public:
-    int  **matrix;
+private:
+    int cLength;
+    int rLength;
+
+public:
+    int **matrix;
     Matrix(int column, int row)
     {
         this->matrix = (int**)malloc(sizeof(int*) * column);
@@ -67,7 +68,15 @@ class Matrix
     }
     private: 
 };
-
+void Matrix::PrintMatrix()
+{
+    for (int i = 0; i < cLength; i++)
+    {
+        for (int j = 0; j < rLength; j++)
+            std::cout << this->matrix[i][j] << " " << std::ends;
+        std::cout << "\n"<< std::endl;
+    }
+}
 int main()
 {
     srand((unsigned int)time(0));
