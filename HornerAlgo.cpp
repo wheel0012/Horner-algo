@@ -24,7 +24,6 @@ public:
     Cell* Calc()
     {
         
-        this->GetLength();
     }
     int GetLength()
     {return this->length;}
