@@ -1,0 +1,10 @@
+C:\Users\wheel\Documents\GitHub\Horner-algo\Abbreviation\bin\Debug\netcoreapp2.2\Abbreviation.deps.json
+C:\Users\wheel\Documents\GitHub\Horner-algo\Abbreviation\bin\Debug\netcoreapp2.2\Abbreviation.runtimeconfig.json
+C:\Users\wheel\Documents\GitHub\Horner-algo\Abbreviation\bin\Debug\netcoreapp2.2\Abbreviation.runtimeconfig.dev.json
+C:\Users\wheel\Documents\GitHub\Horner-algo\Abbreviation\bin\Debug\netcoreapp2.2\Abbreviation.dll
+C:\Users\wheel\Documents\GitHub\Horner-algo\Abbreviation\bin\Debug\netcoreapp2.2\Abbreviation.pdb
+C:\Users\wheel\Documents\GitHub\Horner-algo\Abbreviation\obj\Debug\netcoreapp2.2\Abbreviation.csprojAssemblyReference.cache
+C:\Users\wheel\Documents\GitHub\Horner-algo\Abbreviation\obj\Debug\netcoreapp2.2\Abbreviation.AssemblyInfoInputs.cache
+C:\Users\wheel\Documents\GitHub\Horner-algo\Abbreviation\obj\Debug\netcoreapp2.2\Abbreviation.AssemblyInfo.cs
+C:\Users\wheel\Documents\GitHub\Horner-algo\Abbreviation\obj\Debug\netcoreapp2.2\Abbreviation.dll
+C:\Users\wheel\Documents\GitHub\Horner-algo\Abbreviation\obj\Debug\netcoreapp2.2\Abbreviation.pdb

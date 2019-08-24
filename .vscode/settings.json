@@ -39,6 +39,20 @@
         "xutility": "cpp",
         "*.tcc": "cpp",
         "clocale": "cpp",
-        "cwctype": "cpp"
+        "cwctype": "cpp",
+        "array": "cpp",
+        "atomic": "cpp",
+        "cstdarg": "cpp",
+        "deque": "cpp",
+        "unordered_map": "cpp",
+        "vector": "cpp",
+        "algorithm": "cpp",
+        "functional": "cpp",
+        "iterator": "cpp",
+        "memory_resource": "cpp",
+        "numeric": "cpp",
+        "random": "cpp",
+        "fstream": "cpp",
+        "sstream": "cpp"
     }
 }
