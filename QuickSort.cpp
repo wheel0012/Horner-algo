@@ -18,46 +18,8 @@ class QuickSort
     int length;
     
 };
-/*
-template<typename T>
-class List
-{
-    /*
-    void Add(T val)
-    {
-        Node* temp = new Node<T>();
-        temp->Value = val;
-        temp->prevNode = this;
-        this->nextNode = temp;
-    }
-    void Del(int index)
-    {
-        for(int i = 0; i< index; i++)
-        {
 
-        }
-    }
-    static void RemoveAt(int index)
-    {
-    }
-    private:
-    int index;
-    List(int size, T initialValue)
-    {
-        Node<T> *temp = new Node<T>(initialValue)
-        for(int i = 0; i< size; i++)
-        {
-            Node<T> *temp = new Node<T>()
-        }
-    }
-    int Length()
-    {
-        return this->length;
-    }
-    private:
-    int length;
-    
-};*/
+
 template<typename T>
 class Node
 {
@@ -99,6 +61,51 @@ class Node
         else return nullptr;
     }
 };
+template<typename T>
+class List
+{
+    public:
+    /*
+    void Add(T val)
+    {
+        Node* temp = new Node<T>();
+        temp->Value = val;
+        temp->prevNode = this;
+        this->nextNode = temp;
+    }
+    void Del(int index)
+    {
+        for(int i = 0; i< index; i++)
+        {
+
+        }
+    }
+    static void RemoveAt(int index)
+    {
+    }*/
+    
+    List(int size, T initialValue)
+    {
+        //Node<T> *temp = new Node<T>(initialValue)
+        //for(int i = 0; i< size; i++)
+       // {
+        //    new Node<T>(temp, initialValue);
+        //}
+       // return this;
+    }
+    Node<T>* operator[](const int index)
+    {
+        std::cout<<index<<std::endl;
+        return new Node<T>(23);
+    }
+    int Length()
+    {
+        return this->length;
+    }
+    private:
+    int index;
+    int length;
+};
 int main()
 {
     int arr[10] = {1,5,2,9,4,6,2,4,3,7};
@@ -111,4 +118,5 @@ int main()
     std::cout<<node3->Prev()->Value<<std::endl;
     std::cout<<node3->Value<<std::endl;
     std::cout<<node3->Next()->Value<<std::endl;
+    List<int> *list = new List<int>(123, 0);
 }

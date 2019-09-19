@@ -29,6 +29,7 @@ public:
             std::cout<<this->cell[i].variable<<"||"<<this->cell[i].indices<<"||"<<this->cell[i].coeficient<<std::endl;
         }
     }
+    
     int GetLength()
     {return this->length;}
 private:
