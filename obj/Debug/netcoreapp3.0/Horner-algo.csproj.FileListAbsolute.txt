@@ -1,3 +1,0 @@
-C:\Users\wheel\Documents\GitHub\Horner-algo\obj\Debug\netcoreapp3.0\Horner-algo.csprojAssemblyReference.cache
-C:\Users\wheel\Documents\GitHub\Horner-algo\obj\Debug\netcoreapp3.0\Horner-algo.AssemblyInfoInputs.cache
-C:\Users\wheel\Documents\GitHub\Horner-algo\obj\Debug\netcoreapp3.0\Horner-algo.AssemblyInfo.cs
