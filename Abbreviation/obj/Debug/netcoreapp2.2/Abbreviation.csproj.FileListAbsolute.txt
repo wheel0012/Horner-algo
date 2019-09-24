@@ -8,6 +8,7 @@ C:\Users\wheel\Documents\GitHub\Horner-algo\Abbreviation\obj\Debug\netcoreapp2.2
 C:\Users\wheel\Documents\GitHub\Horner-algo\Abbreviation\obj\Debug\netcoreapp2.2\Abbreviation.AssemblyInfo.cs
 C:\Users\wheel\Documents\GitHub\Horner-algo\Abbreviation\obj\Debug\netcoreapp2.2\Abbreviation.dll
 C:\Users\wheel\Documents\GitHub\Horner-algo\Abbreviation\obj\Debug\netcoreapp2.2\Abbreviation.pdb
+<<<<<<< HEAD
 C:\Users\JUN\Documents\GitHub\Horner-algo\Abbreviation\bin\Debug\netcoreapp2.2\Abbreviation.deps.json
 C:\Users\JUN\Documents\GitHub\Horner-algo\Abbreviation\bin\Debug\netcoreapp2.2\Abbreviation.runtimeconfig.json
 C:\Users\JUN\Documents\GitHub\Horner-algo\Abbreviation\bin\Debug\netcoreapp2.2\Abbreviation.runtimeconfig.dev.json
@@ -18,3 +19,5 @@ C:\Users\JUN\Documents\GitHub\Horner-algo\Abbreviation\obj\Debug\netcoreapp2.2\A
 C:\Users\JUN\Documents\GitHub\Horner-algo\Abbreviation\obj\Debug\netcoreapp2.2\Abbreviation.AssemblyInfo.cs
 C:\Users\JUN\Documents\GitHub\Horner-algo\Abbreviation\obj\Debug\netcoreapp2.2\Abbreviation.dll
 C:\Users\JUN\Documents\GitHub\Horner-algo\Abbreviation\obj\Debug\netcoreapp2.2\Abbreviation.pdb
+=======
+>>>>>>> 2b9396139bf3546ea6494ab4c8639af6a63597c0

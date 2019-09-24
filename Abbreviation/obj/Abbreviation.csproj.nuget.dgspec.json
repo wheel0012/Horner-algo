@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\JUN\\Documents\\GitHub\\Horner-algo\\Abbreviation\\Abbreviation.csproj": {}
+    "c:\\Users\\JUN\\Documents\\GitHub\\Horner-algo\\Abbreviation\\Abbreviation.csproj": {}
   },
   "projects": {
-    "C:\\Users\\JUN\\Documents\\GitHub\\Horner-algo\\Abbreviation\\Abbreviation.csproj": {
+    "c:\\Users\\JUN\\Documents\\GitHub\\Horner-algo\\Abbreviation\\Abbreviation.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\JUN\\Documents\\GitHub\\Horner-algo\\Abbreviation\\Abbreviation.csproj",
+        "projectUniqueName": "c:\\Users\\JUN\\Documents\\GitHub\\Horner-algo\\Abbreviation\\Abbreviation.csproj",
         "projectName": "Abbreviation",
-        "projectPath": "C:\\Users\\JUN\\Documents\\GitHub\\Horner-algo\\Abbreviation\\Abbreviation.csproj",
+        "projectPath": "c:\\Users\\JUN\\Documents\\GitHub\\Horner-algo\\Abbreviation\\Abbreviation.csproj",
         "packagesPath": "C:\\Users\\JUN\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\JUN\\Documents\\GitHub\\Horner-algo\\Abbreviation\\obj\\",
+        "outputPath": "c:\\Users\\JUN\\Documents\\GitHub\\Horner-algo\\Abbreviation\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

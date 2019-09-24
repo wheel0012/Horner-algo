@@ -541,6 +541,7 @@
       "path": "microsoft.netcore.targets/2.0.0",
       "files": [
         ".nupkg.metadata",
+        ".signature.p7s",
         "LICENSE.TXT",
         "THIRD-PARTY-NOTICES.TXT",
         "lib/netstandard1.0/_._",
@@ -692,11 +693,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\JUN\\Documents\\GitHub\\Horner-algo\\Abbreviation\\Abbreviation.csproj",
+      "projectUniqueName": "c:\\Users\\JUN\\Documents\\GitHub\\Horner-algo\\Abbreviation\\Abbreviation.csproj",
       "projectName": "Abbreviation",
-      "projectPath": "C:\\Users\\JUN\\Documents\\GitHub\\Horner-algo\\Abbreviation\\Abbreviation.csproj",
+      "projectPath": "c:\\Users\\JUN\\Documents\\GitHub\\Horner-algo\\Abbreviation\\Abbreviation.csproj",
       "packagesPath": "C:\\Users\\JUN\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\JUN\\Documents\\GitHub\\Horner-algo\\Abbreviation\\obj\\",
+      "outputPath": "c:\\Users\\JUN\\Documents\\GitHub\\Horner-algo\\Abbreviation\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -746,5 +747,13 @@
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.0.100-preview8-013656\\RuntimeIdentifierGraph.json"
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "Undefined",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Problem reading the cache file c:\\Users\\JUN\\Documents\\GitHub\\Horner-algo\\Abbreviation\\obj\\Abbreviation.csproj.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
+    }
+  ]
 }
