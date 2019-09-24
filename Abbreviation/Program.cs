@@ -25,24 +25,6 @@ namespace Abbreviation
     }
     class Abbreviater
     {
-<<<<<<< HEAD
-        public Abbreviater()
-        {
-        }
-        public int[] CmpEachStr(byte[] a, byte[] b)
-        {
-            List<int> result = new List<int>();
-            if(a.Length==0||b.Length==0)return result.ToArray();
-            int a_anchor = 0;
-            for (int i = 0; i < b.Length; i++)
-            {
-                //Console.WriteLine(a_anchor+"__"+i);
-                if (a[a_anchor] == b[i])
-                {
-                    a_anchor++;
-                    result.Add(i);
-                    if (a_anchor == a.Length) return result.ToArray();
-=======
         public int[] CmpEachStr(byte[] a, byte[] b)
         {
             List<int> result = new List<int>();
@@ -58,7 +40,6 @@ namespace Abbreviation
                         result.Add(j);
                         break;
                     }
->>>>>>> 2b9396139bf3546ea6494ab4c8639af6a63597c0
                 }
             }
             return result.ToArray();
@@ -73,8 +54,6 @@ namespace Abbreviation
             }
             return false;
         }
-<<<<<<< HEAD
-=======
         public bool Isin(byte[] target, byte[] source)
         {
             if(source.Length<target.Length)return false;
@@ -102,7 +81,6 @@ namespace Abbreviation
                 if(arr[i] > 64&&arr[i]<91) temp.Add(arr[i]);
             return temp.ToArray();
         }
->>>>>>> 2b9396139bf3546ea6494ab4c8639af6a63597c0
         public string Abbreviate(string a, string b)
         {
             bool result = false;
@@ -113,28 +91,6 @@ namespace Abbreviation
                 List<int> a_cap = new List<int>();
                 List<int> a_small = new List<int>();
                 List<byte> a_caped = new List<byte>();
-<<<<<<< HEAD
-                for (int i = 0; i < a_barr.Length; i++)
-                    if (a_barr[i] < 97) a_cap.Add(i);
-                    else a_small.Add(i);
-                for (int i = 0; i < a_cap.Count; i++) 
-                    a_caped.Add(a_barr[a_cap[i]]);
-                foreach (char temp in a_caped) Console.WriteLine(temp.ToString());
-                Console.WriteLine("---");
-                foreach (char v in b_barr)
-                    Console.WriteLine(v.ToString());
-                Console.WriteLine("------");
-                if (Compare(a_caped.ToArray(), b_barr))
-                   return "YES";
-                else
-                {
-                    if (b_barr.Length <= a_cap.Count) return "NO";
-                    //TODO: NEED TO CHECK a2bIndex 
-                    int[] a2bIndex = CmpEachStr(a_caped.ToArray(), b_barr);
-                    Console.WriteLine("####");
-                    foreach(int i in a2bIndex)Console.WriteLine(i);
-                    if(a2bIndex.Length == 0)
-=======
                 Console.WriteLine(a_barr.Length + "!!"+b_barr.Length);
                 for (int i = 0; i < a_barr.Length; i++)
                     if (a_barr[i] < 97) a_cap.Add(i);
@@ -163,46 +119,12 @@ namespace Abbreviation
                     foreach (int i in a2bIndex) Console.Write(i);
                     Console.WriteLine();
                     if (a2bIndex.Length == 0)
->>>>>>> 2b9396139bf3546ea6494ab4c8639af6a63597c0
                     {
                         int b_anchor = 0;
                         for (int i = 0; i < a_small.Count; i++)
                         {
                             if ((a_barr[i] - 32) == b_barr[b_anchor]) b_anchor++;
                         }
-<<<<<<< HEAD
-                        if (b_anchor < b_barr.Length) return "NO";
-                        else return "YES";
-                    }
-                    {
-                        int b_anchor = 0;
-                        for (int i = 0; i < a2bIndex[0]; i++)
-                        {
-                            if ((a_barr[i] - 32) == b_barr[b_anchor]) b_anchor++;
-                        }
-                        if (b_anchor < a2bIndex[0]) {Console.WriteLine("##"); return "NO";}
-                    }
-                        
-                        for (int i = 1; i < a2bIndex.Length; i++)
-                        {
-                            int b_anchor = 0;
-                            Console.WriteLine("@@@@");
-                            Console.WriteLine(a2bIndex[i-1]);
-                            Console.WriteLine(a2bIndex[i]);
-                            for (int j = a2bIndex[i-1]; j >= a2bIndex[i-1]&&j<a2bIndex[i]; j++)
-                            {
-                                if ((a_barr[i] - 32) == b_barr[b_anchor]) b_anchor++;
-                                Console.WriteLine(a_barr[i].ToString() +":" + b_barr[b_anchor].ToString());
-                            }
-                            for(int j = a2bIndex[a2bIndex.Length-1]; j < b_barr.Length; j++)
-                            {
-
-                            }
-                            Console.WriteLine("@@@@@@");
-                            if (b_anchor < a2bIndex[i]) return "NO";
-                        }
-                    return "YES";
-=======
                         if (b_anchor < b_barr.Length) return "case last-2 NO";
                         else return "YES";
                     }
@@ -231,7 +153,6 @@ namespace Abbreviation
                         }
                         return "NO";
                     }
->>>>>>> 2b9396139bf3546ea6494ab4c8639af6a63597c0
                     //int lastIndex = 0;
                 }
                 /*
