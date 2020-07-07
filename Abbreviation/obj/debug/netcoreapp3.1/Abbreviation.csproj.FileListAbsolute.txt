@@ -1,0 +1,13 @@
+/home/wheel0012/personal/prac/Horner-algo/Abbreviation/bin/debug/netcoreapp3.1/Abbreviation
+/home/wheel0012/personal/prac/Horner-algo/Abbreviation/bin/debug/netcoreapp3.1/Abbreviation.deps.json
+/home/wheel0012/personal/prac/Horner-algo/Abbreviation/bin/debug/netcoreapp3.1/Abbreviation.runtimeconfig.json
+/home/wheel0012/personal/prac/Horner-algo/Abbreviation/bin/debug/netcoreapp3.1/Abbreviation.runtimeconfig.dev.json
+/home/wheel0012/personal/prac/Horner-algo/Abbreviation/bin/debug/netcoreapp3.1/Abbreviation.dll
+/home/wheel0012/personal/prac/Horner-algo/Abbreviation/bin/debug/netcoreapp3.1/Abbreviation.pdb
+/home/wheel0012/personal/prac/Horner-algo/Abbreviation/obj/debug/netcoreapp3.1/Abbreviation.csprojAssemblyReference.cache
+/home/wheel0012/personal/prac/Horner-algo/Abbreviation/obj/debug/netcoreapp3.1/Abbreviation.AssemblyInfoInputs.cache
+/home/wheel0012/personal/prac/Horner-algo/Abbreviation/obj/debug/netcoreapp3.1/Abbreviation.AssemblyInfo.cs
+/home/wheel0012/personal/prac/Horner-algo/Abbreviation/obj/debug/netcoreapp3.1/Abbreviation.csproj.CoreCompileInputs.cache
+/home/wheel0012/personal/prac/Horner-algo/Abbreviation/obj/debug/netcoreapp3.1/Abbreviation.dll
+/home/wheel0012/personal/prac/Horner-algo/Abbreviation/obj/debug/netcoreapp3.1/Abbreviation.pdb
+/home/wheel0012/personal/prac/Horner-algo/Abbreviation/obj/debug/netcoreapp3.1/Abbreviation.genruntimeconfig.cache
