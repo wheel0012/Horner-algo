@@ -1,21 +1,26 @@
 #include <iostream>
+#include <vector>
 template<typename T>
 class QuickSort
 {
+    private:
+    int length;
+    
     public:
     QuickSort()
     {
     }
-    T* Sort(T* arr, int length)
+    void Sort(T* arr, int length)
     {
         T* left;
         T* right;
+
+
     }
 
     int Length()
     {return this->length;}
-    private:
-    int length;
+    
     
 };
 
@@ -24,8 +29,8 @@ template<typename T>
 class Node
 {
     private:
-    Node* prevNode;
-    Node* nextNode;
+    Node* prevNode = NULL;
+    Node* nextNode = NULL;
     public:
     T Value;
     Node(Node *prev, T value)
@@ -60,63 +65,89 @@ class Node
             return prevNode;
         else return nullptr;
     }
-};
-template<typename T>
-class List
-{
-    public:
-    /*
-    void Add(T val)
+    void SetNext(Node<T> *node)
     {
-        Node* temp = new Node<T>();
-        temp->Value = val;
-        temp->prevNode = this;
-        this->nextNode = temp;
-    }
-    void Del(int index)
-    {
-        for(int i = 0; i< index; i++)
+        if(this->nextNode == NULL)
         {
-
+            this->nextNode = node;
+        }
+        else
+        {
+            Node<T> *temp = this->nextNode;
+            this->nextNode = node;
+            temp->prevNode = node;
         }
     }
-    static void RemoveAt(int index)
+};
+template<typename T>
+class LinkedList
+{
+    private:
+    Node<T>* header;
+    Node<T>* currNode;
+    int count;
+    int length;
+    public:
+    LinkedList()
+    {    }
+    LinkedList(T item, ...)
     {
-    }*/
-    
-    List(int size, T initialValue)
-    {
-        //Node<T> *temp = new Node<T>(initialValue)
-        //for(int i = 0; i< size; i++)
-       // {
-        //    new Node<T>(temp, initialValue);
-        //}
-       // return this;
+        
     }
-    Node<T>* operator[](const int index)
+    void Add(Node<T>* item)
     {
-        std::cout<<index<<std::endl;
-        return new Node<T>(23);
+        if(this->header == NULL)
+        {
+            this->header = item;
+            this->currNode = header;
+            this->length = 0;
+        }
+        else
+        {
+            this->currNode->SetNext(item);
+            this->currNode = this->currNode->Next();
+            length++;
+        }
+    }
+    void Add(T value)
+    {
+        auto node = new Node<T>(value);
+        if(this->header == NULL)
+        {
+            this->header = node;
+            this->currNode = header;
+            this->length = 0;
+        }
+        else
+        {
+            this->currNode->SetNext(node);
+            this->currNode = this->currNode->Next();
+            length++;
+        }
     }
     int Length()
     {
         return this->length;
     }
-    private:
-    int index;
-    int length;
+    void Display()
+    {
+        Node<T>* head = this->header;
+        while(head != NULL)
+        {
+            std::cout<<head->Value<<std::endl;
+            head = head->Next();
+        }
+
+    }
 };
 int main()
 {
     int arr[10] = {1,5,2,9,4,6,2,4,3,7};
     Node<int>* node1 = new Node<int>(5);
-    Node<int>* node2 = new Node<int>(node1, 10);
-    std::cout<<node1->Value<<std::endl;
-    std::cout<<node1->Next()->Value<<std::endl;
-    std::cout<<"--------------"<<std::endl;
-    Node<int>* node3 = new Node<int>(node1, 7, node2);
-    std::cout<<node3->Prev()->Value<<std::endl;
-    std::cout<<node3->Value<<std::endl;
-    std::cout<<node3->Next()->Value<<std::endl;
-    List<int> *list = new List<int>(123, 0);
+    Node<int>* node2 = new Node<int>(6);
+    LinkedList<int> *list = new LinkedList<int>();
+    list->Add(node1);
+    list->Add(node2);
+    list->Add(10);
+    list->Display();
 }

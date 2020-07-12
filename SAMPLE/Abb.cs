@@ -1,7 +1,8 @@
-using System;
+﻿using System;
 using System.Text;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Linq;
 
 namespace Abbreviation
 {
@@ -19,93 +20,113 @@ namespace Abbreviation
 
         private int[] orgnlCapArr;
 
+        private string orgnlCapped;
+
         private int orgnlCapCursor;
 
         public Abb()
         {
-            this.orgnlStr = orgnlStr;
-            this.n2bStr = n2bStr;
             this.anchorPos = 0;
             this.cursor = 0;
             this.orgnlCapCursor = 0;
             this.n2bCursor = 0;
         }
 
-        public string Find(string str, string capStr)
+        public bool Find(string str, string capStr)
         {
             this.orgnlStr = str;
             this.n2bStr = capStr;
             return this.Process();
         }
 
-        private string Process()
+        private bool Process()
         {
             this.CollectCapFromOrgnl();
 
-                var a = new StringBuilder();
-            while (n2bCursor < n2bStr.Length)
-            {
+            var target = this.LocateTarget(this.orgnlCapArr, n2bStr);
 
-                if (n2bStr[n2bCursor] == orgnlStr[
-                    orgnlCapArr[orgnlCapCursor]
-                    ])
-                {
-                    this.N2BMoveNext();
-
-                    this.OrgnlCapMoveNext();
-
-                    a.Append(orgnlStr[
-                    orgnlCapArr[orgnlCapCursor]
-                    ]);
-
-                    Debug.WriteLine("asd");
-                }
-                else
-                {
-                    a.Append('x');
-                    orgnlCapCursor++;
-                }
-            }
-
-            return a.ToString();
+            var result =  FindInRange(target);
+            return result;
         }
 
-        private bool FindCap()
+        private int[] LocateTarget(int[] aCapedArr, string b)
         {
-            for (int i = 0; i < cursor; ++this.anchorPos)
+            var result = Enumerable.Repeat<int>(-1, b.Length).ToArray();
+
+            for (int bC = 0, aC = 0; bC < b.Length; ++bC)
             {
-                var ch = this.orgnlStr[i];
-                if (TryMake2Cap(ref ch))
+                if (orgnlCapped[aC] == b[bC])
                 {
-                    if (this.n2bStr[n2bCursor] == ch)
-                    {
-                        return true;
-                    }
-                    else
-                    {
-                        return false;
-                    }
+                    result[bC] = aCapedArr[aC];
+                    ++aC;
+                }
+            }
+
+            return result;
+        }
+
+        private bool FindInRange(int[] targetArr)
+        {
+            for (int i = 0; i < targetArr.Length; ++i)
+            {
+                if (targetArr[i] != -1)
+                    continue;
+
+                if (i == 0)
+                {
+
+                }
+                else if (i == targetArr.Length - 1)
+                {
+
                 }
                 else
                 {
-                    return false;
+                    var start = targetArr[i - 1];
+                    var end = targetArr[i + 1];
+                    if (start != -1 && end != -1)
+                        if (FindBetween(targetArr, i))
+                            continue;
+                        else
+                            return false;
                 }
             }
+
+            return true;
+        }
+
+        private bool FindBetween(int[] targetArr, int target)
+        {
+            int start = targetArr[target - 1];
+            int end = targetArr[target + 1];
+            int targetCh = this.n2bStr[target];
+
+            for (; start <= end; ++start)
+            {
+                if (TryMake2Cap(orgnlStr[start]) == targetCh)
+                    return true;
+            }
+
             return false;
         }
 
-        private bool TryMake2Cap(ref char ch)
+        /*
+        private bool FindLeft()
         {
-            if (ch < 0x7b && ch > 0x60)
-            {
-                ch -= (char)0x20;
 
-                return true;
-            }
-            else
-            {
-                return false;
-            }
+        }
+
+        private bool FindRight()
+        {
+
+        }*/
+
+
+        private char TryMake2Cap(char ch)
+        {
+            ch -= (char)0x20;
+
+            return ch;
         }
 
         private bool IsCap(char ch)
@@ -151,7 +172,7 @@ namespace Abbreviation
 
         private bool OrgnlCapMoveNext()
         {
-            if (this.orgnlCapCursor < this.orgnlCapArr.Length)
+            if (this.orgnlCapCursor < this.orgnlCapArr.Length - 1)
             {
                 ++this.orgnlCapCursor;
 
@@ -166,15 +187,19 @@ namespace Abbreviation
         private void CollectCapFromOrgnl()
         {
             var capList = new List<int>();
+            var capped = new StringBuilder();
             for (int i = 0; i < orgnlStr.Length; ++i)
             {
                 if (IsCap(orgnlStr[i]))
                 {
-                    capList.Add(orgnlStr[i]);
+                    capList.Add(i);
+                    capped.Append(orgnlStr[i]);
                 }
             }
 
+            this.orgnlCapped = capped.ToString();
             this.orgnlCapArr = capList.ToArray();
         }
     }
+
 }
